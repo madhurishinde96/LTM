@@ -1,0 +1,52 @@
+package LTM.TestCases;
+
+import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import LTM_Pages.LoginPage;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+public class Base_Class 
+
+{
+	WebDriver driver;
+	
+	@BeforeTest
+	public void beforetest()
+	{
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions options = new ChromeOptions();
+		options.setAcceptInsecureCerts(true);
+		driver = new ChromeDriver(options);
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));	
+		driver.get("https://192.168.3.10");
+	}
+	
+	
+	@Test
+	public void Login_Test(WebDriver driver)
+	{
+		this.driver = driver;
+		LoginPage login = new LoginPage(driver);
+		
+		login.username("admin");
+		login.password("Ccl@1234");
+		login.loginBtn();
+	}
+
+	@AfterTest
+	public void aftertest()
+	{
+		driver.quit();
+						
+	}
+	
+}

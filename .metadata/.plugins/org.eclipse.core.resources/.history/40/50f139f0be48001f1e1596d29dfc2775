@@ -1,0 +1,33 @@
+package LTM.TestCases;
+
+import org.openqa.selenium.By;
+import org.testng.annotations.Test;
+
+import LTM_Pages.LoginPage;
+
+public class SelectTC extends Base_Class
+{
+	
+	@Test
+	public void Login()
+	{
+		LoginPage login = new LoginPage(driver);
+		login.username("admin");
+		login.password("admin");
+		login.loginBtn();
+	}
+
+	
+	
+	@Test
+	public void TC() throws InterruptedException
+	{
+		//driver.findElement(By.cssSelector("div[class='rtMid Selected'] span[class='rtIn icon-100--Group']")).click(); 
+		
+		
+		Thread.sleep(5000);
+		driver.findElement(By.xpath("(//span[contains(@class,'rtPlus')])[2]")).click();
+	}
+	
+	
+}

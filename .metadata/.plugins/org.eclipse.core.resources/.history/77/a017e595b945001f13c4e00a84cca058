@@ -1,0 +1,81 @@
+package LTM_Pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class TC_SelectionPage 
+{	
+	WebDriver driver;
+	
+	public TC_SelectionPage(WebDriver driver)
+	{
+		this.driver=driver;
+		PageFactory.initElements(driver, this);
+
+	}
+	
+	
+	@FindBy(xpath="//div[@class='rtTop']//span[@class='rtPlus']")
+	WebElement def;
+	
+	@FindBy(xpath="(//span[@class='icon-272--linux_red-dot-68'][normalize-space()='192.168.1.175'])[1]")
+	WebElement select_TC;
+	
+	@FindBy(xpath="(//i[contains(@class,'icon-230--Upgrade-Management alignIcon')])[3]")
+	WebElement upgrade_Mng;
+	
+	@FindBy(xpath="(//a[contains(@class,'nav-link navLinkLinux nav-toggle')])[36]")
+	WebElement Soft_Upgrade_Mng;
+	
+	@FindBy(xpath="(//a[contains(@class,'nav-link navLinkLinux clsHTMLMenuItemClick')])[102]")
+	WebElement Soft_Upgrade;
+	
+	@FindBy(xpath="//input[@id='LXSoftwareUpgrade_btnNew_Install']")
+	WebElement new_update;
+	
+	
+	
+	
+	
+	
+	
+//	By upgrade_Mng = By.xpath("(//i[contains(@class,'icon-230--Upgrade-Management alignIcon')])[3]");
+//	By Soft_Upgrade_Mng = By.xpath("(//a[contains(@class,'nav-link navLinkLinux nav-toggle')])[36]");
+//	By Soft_Upgrade = By.xpath("(//a[contains(@class,'nav-link navLinkLinux clsHTMLMenuItemClick')])[102]");
+//	By new_update = By.xpath("//input[@id='LXSoftwareUpgrade_btnNew_Install']");
+	
+	
+//	public void def()
+//	{
+//		driver.findElement(defaullt).click();
+//	}
+//
+//	public void TC()
+//	{
+//		driver.findElement(select_TC).click();
+//	}
+//	
+//	public void upmg()
+//	{
+//		driver.findElement(upgrade_Mng).click();
+//	}
+//	
+//	public void supmg()
+//	{
+//		driver.findElement(Soft_Upgrade_Mng).click();
+//	}
+//	
+//	public void softupgrade()
+//	{
+//		driver.findElement(Soft_Upgrade).click();
+//	}
+//	
+//	public void newup()
+//	{
+//		driver.findElement(new_update).click();
+//	}
+}
+
+

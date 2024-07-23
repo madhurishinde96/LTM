@@ -1,0 +1,53 @@
+package LTM_Pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+public class LoginPage 
+{
+	WebDriver driver;
+	
+	public LoginPage(WebDriver driver)
+	{
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
+	
+	@FindBy(name="UserName")
+	WebElement username;
+	
+	@FindBy(id="PAssword")
+	WebElement password;
+	
+	@FindBy(xpath="//input[@id='btnLogin']")
+	WebElement loginBtn;
+	
+	
+//	By username = By.name("UserName");
+//	By password = By.id("Password");
+//	By loginBtn = By.xpath("//input[@id='btnLogin']");
+	
+	public void username(String user)
+	{
+		driver.findElement(username).sendKeys(user);
+	}
+	
+//	public void username(String user)
+//	{
+//		driver.findElement(username).sendKeys(user);
+//	}
+//	
+//	public void password(String pass)
+//	{
+//		driver.findElement(password).sendKeys(pass);
+//	}
+//	
+//	public void loginBtn()
+//	{
+//		driver.findElement(loginBtn).click();		
+//	}
+	
+}

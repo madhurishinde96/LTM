@@ -1,0 +1,36 @@
+package LTM.TestCases;
+
+import org.testng.annotations.Test;
+
+import LTM_Pages.LoginPage;
+
+public class Login_Test extends Base_Class
+{
+	LoginPage login = new LoginPage(driver);
+	
+	@Test (priority = 0)
+	public void validLogin()
+	{
+		login.username("admin");
+		login.password("Ccl@1234");
+		login.loginBtn();
+	}
+	
+	@Test  (priority = 1)
+	public void invalidLogin()
+	{
+		login.username("ad");
+		login.password("ad");
+		login.loginBtn();
+	}
+	
+	@Test  (priority = 2)
+	public void blankLogin()
+	{
+		login.username("");
+		login.password("");
+		login.loginBtn();
+	}
+	
+	
+}

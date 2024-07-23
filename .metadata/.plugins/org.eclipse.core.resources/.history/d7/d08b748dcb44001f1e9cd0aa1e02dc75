@@ -1,0 +1,24 @@
+package LTM.TestCases;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.Test;
+
+import LTM_Pages.LoginPage;
+
+public class Login_Test 
+{
+	WebDriver driver;
+	
+	@Test
+	public void login()
+	{
+		this.driver=driver;
+		LoginPage login = new LoginPage(driver);
+		
+		login.username("admin");
+		login.password("Ccl@1234");
+		login.loginBtn();
+	}
+	
+	
+}

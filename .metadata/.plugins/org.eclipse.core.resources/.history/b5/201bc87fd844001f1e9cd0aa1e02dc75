@@ -1,0 +1,17 @@
+package LTM.TestCases;
+
+import org.testng.annotations.Test;
+
+import LTM_Pages.LoginPage;
+
+public class Login_Test extends Base_Class
+{
+
+	@Test
+	public void a1()
+	{
+		System.out.println("Madhuri");
+	}
+	
+	
+}

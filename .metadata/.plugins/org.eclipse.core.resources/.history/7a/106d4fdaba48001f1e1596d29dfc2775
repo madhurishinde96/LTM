@@ -1,0 +1,13 @@
+package LTM.TestCases;
+
+import org.openqa.selenium.By;
+
+public class SelectTC extends Base_Class
+{
+	public void TC()
+	{
+		driver.findElement(By.cssSelector("div[class='rtMid'] span[class='rtIn icon-100--Group']")).click();
+	}
+	
+	
+}
